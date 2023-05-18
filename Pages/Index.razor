@@ -1,8 +1,48 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
-
-<h1>Patryk Siuda</h1>
-<h2>Numer indeksu: 113827</h2>
+<PageTitle>Witryna</PageTitle>
 
 
+<form class="content-box">
+
+    <div class="logo"><img class="icon-user-big" width="64" height="64" src="https://img.icons8.com/laces/64/user.png" alt="user" /></div>
+        <div class="content-text">
+        <div class="form-input">
+        <img class="icon-user-small" width="32" height="32" src="https://img.icons8.com/laces/64/user.png" alt="user" />
+        <input type="text" placeholder="Login" class="form-login"/>
+        </div>
+        <div class="form-input">
+        <img class="icon-lock-small" width="25" height="25" src="https://img.icons8.com/ios/50/lock--v1.png" alt="lock--v1" />
+        <input type="password" placeholder="Password" class="form-passwd"/>
+        </div>
+            
+        </div>
+        <div class="form-helper">
+        <label class="label-checkbox"><input type="checkbox" class="form-checkbox"/>Remember me</label>
+        <a href="#ForgetPasswd">Forget password?</a>
+        </div>
+    <button class="form-btn" name="zalogujUzyt" @onclick="zalogujUzyt">Login</button>
+
+        <a href="#Register" class="form-register">Forget password? Sign in!</a>
+
+</form>
+
+@code{
+
+    private void zalogujUzyt()
+    {
+        string uzytkownik = "san";
+        string haslo = "123";
+
+        if(uzytkownik == "san" && haslo == "123")
+        {
+            Console.WriteLine("Pomyślnie zalogowano");
+            Console.WriteLine("<h1>Patryk Siuda</h1>");
+            Console.WriteLine("<h2>Numer indeksu: 113827</h2>");
+        }
+        else
+        {
+            Console.WriteLine("Wprowadzono niepoprawne dane");
+        }
+    }
+}
